@@ -2,18 +2,16 @@ public class Main {
     public static void main(String[] args) throws java.io.IOException {
         java.io.BufferedReader br = new java.io.BufferedReader(new java.io.InputStreamReader(System.in));
 
-        System.out.print("Escribe el nombre de la floristería: ");
-        String nombre = br.readLine();
+        String[] flores = {"Rosas", "Girasoles", "Claveles", "Lirios"};
 
-        String[] flores = {"Rosas", "Tulipanes", "Orquídeas"};
+        Floristeria miFloristeria = new Floristeria("Blanco", 4, 2, true, true, flores);
 
-        Floristeria miFloristeria = new Floristeria("Rosa", 2, 1, true, false, nombre, flores);
+        System.out.println("\n" + miFloristeria.descripcion());
 
-        System.out.println(miFloristeria.descripcion());
-
-        System.out.print("¿De qué color quieres pintar la casa?: ");
+        System.out.print("\n¿De qué color te gustaría pintar la floristería Mauricio?: ");
         String nuevoColor = br.readLine();
-
         miFloristeria.pintar(nuevoColor);
+
+        System.out.println("\nGracias por visitar la floristería Mauricio.");
     }
 }
